@@ -1,0 +1,11 @@
+bin
+Bin
+obj
+Obj
+*.user
+*.suo
+*.bak
+*.resharper*
+*.pidb
+*.userprefs
+

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2EEF955F-94DB-4122-8EAE-503D32A2C36A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Blackmagic.DeckLink</RootNamespace>
+    <AssemblyName>DeckLink.net</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DeckLinkAPIInformation.cs" />
+    <Compile Include="DeckLinkGLScreenPreviewHelper.cs" />
+    <Compile Include="DeckLinkIterator.cs" />
+    <Compile Include="DeckLinkVideoConversion.cs" />
+    <Compile Include="IDeckLink.cs" />
+    <Compile Include="IDeckLinkAPIInformation.cs" />
+    <Compile Include="IDeckLinkAttributes.cs" />
+    <Compile Include="IDeckLinkAudioInputPacket.cs" />
+    <Compile Include="IDeckLinkAudioOutputCallback.cs" />
+    <Compile Include="IDeckLinkConfiguration.cs" />
+    <Compile Include="IDeckLinkDeckControl.cs" />
+    <Compile Include="IDeckLinkDeckControlStatusCallback.cs" />
+    <Compile Include="IDeckLinkDisplayMode.cs" />
+    <Compile Include="IDeckLinkDisplayModeIterator.cs" />
+    <Compile Include="IDeckLinkGLScreenPreviewHelper.cs" />
+    <Compile Include="IDeckLinkInput.cs" />
+    <Compile Include="IDeckLinkInputCallback.cs" />
+    <Compile Include="IDeckLinkIterator.cs" />
+    <Compile Include="IDeckLinkKeyer.cs" />
+    <Compile Include="IDeckLinkMemoryAllocator.cs" />
+    <Compile Include="IDeckLinkMutableVideoFrame.cs" />
+    <Compile Include="IDeckLinkOutput.cs" />
+    <Compile Include="IDeckLinkScreenPreviewCallback.cs" />
+    <Compile Include="IDeckLinkVideoConversion.cs" />
+    <Compile Include="IDeckLinkVideoFrame.cs" />
+    <Compile Include="IDeckLinkVideoFrame3DExtensions.cs" />
+    <Compile Include="IDeckLinkVideoFrameAncillary.cs" />
+    <Compile Include="IDeckLinkVideoInputFrame.cs" />
+    <Compile Include="IDeckLinkVideoOutputCallback.cs" />
+    <Compile Include="Streaming\IBMDStreamingAudioPacket.cs" />
+    <Compile Include="Streaming\IBMDStreamingDeviceInput.cs" />
+    <Compile Include="Streaming\IBMDStreamingDeviceNotificationCallback.cs" />
+    <Compile Include="Streaming\IBMDStreamingDiscovery.cs" />
+    <Compile Include="Streaming\IBMDStreamingH264InputCallback.cs" />
+    <Compile Include="Streaming\IBMDStreamingH264NALPacket.cs" />
+    <Compile Include="Streaming\IBMDStreamingH264NALParser.cs" />
+    <Compile Include="Streaming\IBMDStreamingMPEG2TSPacket.cs" />
+    <Compile Include="Streaming\IBMDStreamingMutableVideoEncodingMode.cs" />
+    <Compile Include="Streaming\IBMDStreamingVideoEncodingMode.cs" />
+    <Compile Include="Streaming\IBMDStreamingVideoEncodingModePresetIterator.cs" />
+    <Compile Include="IDeckLinkTimecode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Streaming\StreamingDiscovery.cs" />
+    <Compile Include="Types.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
