@@ -11,7 +11,7 @@ namespace Blackmagic.DeckLink
 	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
 	public interface IDeckLinkVideoInputFrame
 	{
-		int GetStreamTime([Out] out int frameTime, [Out] out int frameDuration, [In] int timeScale);
-		int GetHardwareReferenceTimestamp([In] int timeScale, [Out] out int frameTime, [Out] out int frameDuration);
+		int GetStreamTime([Out] out long frameTime, [Out] out long frameDuration, [In] long timeScale);
+		int GetHardwareReferenceTimestamp([In] long timeScale, [Out] out long frameTime, [Out] out long frameDuration);
 	}
 }

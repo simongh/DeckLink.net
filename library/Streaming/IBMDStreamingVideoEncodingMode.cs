@@ -12,15 +12,15 @@ namespace Blackmagic.DeckLink.Streaming
 	public interface IBMDStreamingVideoEncodingMode
 	{
 		int GetName([Out, MarshalAs(UnmanagedType.BStr)] out string name);
-		int GetPresetID();
-		int GetSourcePositionX();
-		int GetSourcePositionY();
-		int GetSourceWidth();
-		int GetSourceHeight();
-		int GetDestWidth();
-		int GetDestHeight();
+		uint GetPresetID();
+		uint GetSourcePositionX();
+		uint GetSourcePositionY();
+		uint GetSourceWidth();
+		uint GetSourceHeight();
+		uint GetDestWidth();
+		uint GetDestHeight();
 		int GetFlag([In] BMDStreamingEncodingModePropertyID cfgID, [Out, MarshalAs(UnmanagedType.Bool)] out bool value);
-		int GetInt([In] BMDStreamingEncodingModePropertyID cfgID, [Out] out int value);
+		int GetInt([In] BMDStreamingEncodingModePropertyID cfgID, [Out] out long value);
 		int GetFloat([In] BMDStreamingEncodingModePropertyID cfgID, [Out] out double value);
 		int GetString([In] BMDStreamingEncodingModePropertyID cfgID, [Out, MarshalAs(UnmanagedType.BStr)] out string value);
 		int CreateMutableVideoEncodingMode([Out] out IBMDStreamingMutableVideoEncodingMode newEncodingMode); // Creates a mutable copy of the encoding mode

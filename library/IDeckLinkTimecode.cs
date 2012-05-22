@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Runtime.InteropServices;
 
 namespace Blackmagic.DeckLink
@@ -11,10 +8,10 @@ namespace Blackmagic.DeckLink
 	[InterfaceType( ComInterfaceType.InterfaceIsIUnknown)]
 	public interface IDeckLinkTimecode
 	{
-		int GetBCD();
+		uint GetBCD();
 		int GetComponents([Out] out byte hours, [Out]out byte minutes, [Out]out byte seconds, [Out]out byte frames);
 		int GetString([Out, MarshalAs(UnmanagedType.BStr)] out string timecode);
 		BMDTimecodeFlags GetFlags();
-		int GetTimecodeUserBits([Out] out long userBits);
+		int GetTimecodeUserBits([Out] out uint userBits);
 	}
 }

@@ -14,7 +14,7 @@ namespace Blackmagic.DeckLink
 	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
 	public interface IDeckLinkMemoryAllocator
 	{
-		int AllocateBuffer([In] ulong bufferSize, [Out] IntPtr allocatedBuffer);
+		int AllocateBuffer([In] uint bufferSize, [Out] IntPtr allocatedBuffer);
 		int ReleaseBuffer([In] IntPtr buffer);
 
 		int Commit();

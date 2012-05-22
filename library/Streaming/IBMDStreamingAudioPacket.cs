@@ -12,9 +12,9 @@ namespace Blackmagic.DeckLink.Streaming
 	public interface IBMDStreamingAudioPacket
 	{
 		BMDStreamingAudioCodec GetCodec();
-		long GetPayloadSize();
+		int GetPayloadSize();
 		int GetBytes([Out] out IntPtr buffer);
-		int GetPlayTime([In] long requestedTimeScale, [Out] out long playTime);
+		int GetPlayTime([In] ulong requestedTimeScale, [Out] out ulong playTime);
 		int GetPacketIndex([Out]  out int packetIndex);
 	}
 }

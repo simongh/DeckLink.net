@@ -16,6 +16,6 @@ namespace Blackmagic.DeckLink
 		int SetTimecode([In] BMDTimecodeFormat format, [In] IDeckLinkTimecode timecode);
 		int SetTimecodeFromComponents([In] BMDTimecodeFormat format, [In] byte hours, [In] byte minutes, [In] byte seconds, [In] byte frames, [In] BMDTimecodeFlags flags);
 		int SetAncillaryData([In] IDeckLinkVideoFrameAncillary ancillary);
-		int SetTimecodeUserBits([In] BMDTimecodeFormat format, [In] int userBits);
+		int SetTimecodeUserBits([In] BMDTimecodeFormat format, [In] uint userBits);
 	}
 }

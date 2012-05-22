@@ -15,7 +15,7 @@ namespace Blackmagic.DeckLink
 		BMDDisplayMode GetDisplayMode();
 		int GetWidth();
 		int GetHeight();
-		int GetFrameRate([Out] out int frameDuration, [Out] out int timeScale);
+		int GetFrameRate([Out] out long frameDuration, [Out] out long timeScale);
 		BMDFieldDominance GetFieldDominance();
 		BMDDisplayModeFlags GetFlags();
 	}

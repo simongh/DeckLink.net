@@ -26,7 +26,7 @@ namespace Blackmagic.DeckLink
 		int CreateAncillaryData([In] BMDPixelFormat pixelFormat, [Out] out IDeckLinkVideoFrameAncillary outBuffer);
 
 		int DisplayVideoFrameSync([In] IDeckLinkVideoFrame theFrame);
-		int ScheduleVideoFrame([In] IDeckLinkVideoFrame theFrame, [In] int displayTime, [In] int displayDuration, [In] int timeScale);
+		int ScheduleVideoFrame([In] IDeckLinkVideoFrame theFrame, [In] long displayTime, [In] long displayDuration, [In] long timeScale);
 		int SetScheduledFrameCompletionCallback([In] IDeckLinkVideoOutputCallback theCallback);
 		int GetBufferedVideoFrameCount([Out] out uint bufferedFrameCount);
 
@@ -39,7 +39,7 @@ namespace Blackmagic.DeckLink
 
 		int BeginAudioPreroll();
 		int EndAudioPreroll();
-		int ScheduleAudioSamples([In] IntPtr buffer, [In] uint sampleFrameCount, [In] int streamTime, [In] int timeScale, [Out] out uint sampleFramesWritten);
+		int ScheduleAudioSamples([In] IntPtr buffer, [In] uint sampleFrameCount, [In] long streamTime, [In] long timeScale, [Out] out uint sampleFramesWritten);
 
 		int GetBufferedAudioSampleFrameCount([Out] out uint bufferedSampleFrameCount);
 		int FlushBufferedAudioSamples();
@@ -48,14 +48,14 @@ namespace Blackmagic.DeckLink
 
 		/* Output Control */
 
-		int StartScheduledPlayback([In] int playbackStartTime, [In] int timeScale, [In] double playbackSpeed);
-		int StopScheduledPlayback([In] int stopPlaybackAtTime, [Out] out int actualStopTime, [In] int timeScale);
+		int StartScheduledPlayback([In] long playbackStartTime, [In] long timeScale, [In] double playbackSpeed);
+		int StopScheduledPlayback([In] long stopPlaybackAtTime, [Out] out long actualStopTime, [In] long timeScale);
 		int IsScheduledPlaybackRunning([Out] out bool active);
-		int GetScheduledStreamTime([In] int desiredTimeScale, [Out] out int streamTime, [Out] out double playbackSpeed);
+		int GetScheduledStreamTime([In] long desiredTimeScale, [Out] out long streamTime, [Out] out double playbackSpeed);
 		int GetReferenceStatus([Out] out BMDReferenceStatus referenceStatus);
 
 		/* Hardware Timing */
 
-		int GetHardwareReferenceClock([In] int desiredTimeScale, [Out] out int hardwareTime, [Out] out int timeInFrame, [Out] out int ticksPerFrame);
+		int GetHardwareReferenceClock([In] long desiredTimeScale, [Out] out long hardwareTime, [Out] out long timeInFrame, [Out] out long ticksPerFrame);
 	}
 }

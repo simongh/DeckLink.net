@@ -16,6 +16,6 @@ namespace Blackmagic.DeckLink.Streaming
 	{
 		int IsNALSequenceParameterSet([In] IBMDStreamingH264NALPacket nal);
 		int IsNALPictureParameterSet([In] IBMDStreamingH264NALPacket nal);
-		int GetProfileAndLevelFromSPS([In] IBMDStreamingH264NALPacket nal, [Out] out int profileIdc, [Out]  out int profileCompatability, [Out] out  int levelIdc);
+		int GetProfileAndLevelFromSPS([In] IBMDStreamingH264NALPacket nal, [Out] out uint profileIdc, [Out]  out uint profileCompatability, [Out] out uint levelIdc);
 	}
 }

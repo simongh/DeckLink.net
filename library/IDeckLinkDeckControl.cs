@@ -11,16 +11,16 @@ namespace Blackmagic.DeckLink
 	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
 	public interface IDeckLinkDeckControl
 	{
-		int Open([In] int timeScale, [In] int timeValue, [In] bool timecodeIsDropFrame, [Out] out BMDDeckControlError error);
+		int Open([In] long timeScale, [In] long timeValue, [In] bool timecodeIsDropFrame, [Out] out BMDDeckControlError error);
 		int Close([In] bool standbyOn);
 		int GetCurrentState([Out] out BMDDeckControlMode mode, [Out] out BMDDeckControlVTRControlState vtrControlState, [Out] out BMDDeckControlStatusFlags flags);
 		int SetStandby([In] bool standbyOn);
-		int SendCommand([In] byte inBuffer, [In] int inBufferSize, [Out] out byte outBuffer, [Out] int outDataSize, [In] int outBufferSize, [Out] out BMDDeckControlError error);
+		int SendCommand([In] byte inBuffer, [In] uint inBufferSize, [Out] out byte outBuffer, [Out] uint outDataSize, [In] uint outBufferSize, [Out] out BMDDeckControlError error);
 		int Play([Out] out BMDDeckControlError error);
 		int Stop([Out] out BMDDeckControlError error);
 		int TogglePlayStop([Out] out BMDDeckControlError error);
 		int Eject([Out] out BMDDeckControlError error);
-		int GoToTimecode([In] int timecode, [Out] out BMDDeckControlError error);
+		int GoToTimecode([In] uint timecode, [Out] out BMDDeckControlError error);
 		int FastForward([In] bool viewTape, [Out] out BMDDeckControlError error);
 		int Rewind([In] bool viewTape, [Out] out BMDDeckControlError error);
 		int StepForward([Out] out BMDDeckControlError error);
@@ -29,15 +29,15 @@ namespace Blackmagic.DeckLink
 		int Shuttle([In] double rate, [Out] out BMDDeckControlError error);
 		int GetTimecodeString([Out, MarshalAs(UnmanagedType.BStr)] out string currentTimeCode, [Out] out BMDDeckControlError error);
 		int GetTimecode([Out] out IDeckLinkTimecode currentTimecode, [Out] out BMDDeckControlError error);
-		int GetTimecodeBCD([Out] out int currentTimecode, [Out] out BMDDeckControlError error);
-		int SetPreroll([In] int prerollSeconds);
-		int GetPreroll([Out] out int prerollSeconds);
+		int GetTimecodeBCD([Out] out uint currentTimecode, [Out] out BMDDeckControlError error);
+		int SetPreroll([In] uint prerollSeconds);
+		int GetPreroll([Out] out uint prerollSeconds);
 		int SetExportOffset([In] int exportOffsetFields);
 		int GetExportOffset([Out] out int exportOffsetFields);
 		int GetManualExportOffset([Out] out int deckManualExportOffsetFields);
 		int SetCaptureOffset([In] int captureOffsetFields);
 		int GetCaptureOffset([Out] out int captureOffsetFields);
-		int StartExport([In] int inTimecode, [In] int outTimecode, [In] BMDDeckControlExportModeOpsFlags exportModeOps, [Out] out BMDDeckControlError error);
+		int StartExport([In] uint inTimecode, [In] uint outTimecode, [In] BMDDeckControlExportModeOpsFlags exportModeOps, [Out] out BMDDeckControlError error);
 		int StartCapture([In] bool useVITC, [In] int inTimecode, [In] int outTimecode, [Out] out BMDDeckControlError error);
 		int GetDeviceID([Out] out ushort deviceId, [Out] out BMDDeckControlError error);
 		int Abort();

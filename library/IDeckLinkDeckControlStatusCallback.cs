@@ -11,9 +11,9 @@ namespace Blackmagic.DeckLink
 	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
 	public interface IDeckLinkDeckControlStatusCallback
 	{
-		int TimecodeUpdate([In] int currentTimecode);
+		int TimecodeUpdate([In] uint currentTimecode);
 		int VTRControlStateChanged([In] BMDDeckControlVTRControlState newState, [In] BMDDeckControlError error);
 		int DeckControlEventReceived([In] BMDDeckControlEvent @event, [In] BMDDeckControlError error);
-		int DeckControlStatusChanged([In] BMDDeckControlStatusFlags flags, [In] int mask);
+		int DeckControlStatusChanged([In] BMDDeckControlStatusFlags flags, [In] uint mask);
 	}
 }

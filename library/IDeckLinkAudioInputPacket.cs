@@ -13,6 +13,6 @@ namespace Blackmagic.DeckLink
 	{
 		int GetSampleFrameCount();
 		int GetBytes([Out] out IntPtr buffer);
-		int GetPacketTime([Out] out int packetTime, [In] int timeScale);
+		int GetPacketTime([Out] out long packetTime, [In] long timeScale);
 	}
 }

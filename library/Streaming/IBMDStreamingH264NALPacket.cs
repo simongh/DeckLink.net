@@ -11,10 +11,10 @@ namespace Blackmagic.DeckLink.Streaming
 	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
 	public interface IBMDStreamingH264NALPacket
 	{
-		long GetPayloadSize();
+		int GetPayloadSize();
 		int GetBytes([Out] out IntPtr buffer);
 		int GetBytesWithSizePrefix([Out] out IntPtr buffer); // Contains a 32-bit unsigned big endian size prefix
-		int GetDisplayTime([In] int requestedTimeScale, [Out] out int displayTime);
-		int GetPacketIndex([Out] out int packetIndex);
+		int GetDisplayTime([In] ulong requestedTimeScale, [Out] out ulong displayTime);
+		int GetPacketIndex([Out] out uint packetIndex);
 	}
 }

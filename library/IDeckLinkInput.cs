@@ -42,6 +42,6 @@ namespace Blackmagic.DeckLink
 
 		/* Hardware Timing */
 
-		int GetHardwareReferenceClock([In] int desiredTimeScale, [Out] out int hardwareTime, [Out] out int timeInFrame, [Out] out int ticksPerFrame);
+		int GetHardwareReferenceClock([In] long desiredTimeScale, [Out] out long hardwareTime, [Out] out long timeInFrame, [Out] out long ticksPerFrame);
 	}
 }
